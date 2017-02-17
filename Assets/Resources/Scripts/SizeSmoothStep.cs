@@ -5,7 +5,8 @@ using UnityEngine;
 public enum ScaleAxis
 {
     AxisX,
-    AxisY
+    AxisY,
+    AxisBoth
 }
 
 public class SizeSmoothStep : MonoBehaviour
@@ -82,6 +83,10 @@ public class SizeSmoothStep : MonoBehaviour
 
                 case ScaleAxis.AxisY:
                     Target.localScale = new Vector2(Origin.x, Value);
+                    break;
+
+                case ScaleAxis.AxisBoth:
+                    Target.localScale = new Vector2(Value, Value);
                     break;
             }
         }
